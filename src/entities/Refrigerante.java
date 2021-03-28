@@ -7,6 +7,10 @@ public enum Refrigerante{
     PEPSI("Pepsi", 3.50, 20),
     JESUS("Jesus", 3.00, 20);
 
+    public static final int MAXREFRIGERANTE = 5;
+    public static final int MINREFRIGERANTE =1;
+
+
     /*
         PROPRIEDADES PEDIDAS
     */
@@ -55,7 +59,7 @@ public enum Refrigerante{
         return valor;
     }
 
-    public double getEstoque(){
+    public int getEstoque(){
         return estoque;
     }
     
@@ -79,7 +83,7 @@ public enum Refrigerante{
     public static void mostrarRefrigerantes() {
         Refrigerante[] opcoes = Refrigerante.values();
         for (Refrigerante opcao : opcoes) {
-            System.out.print(opcao.ordinal()+1 + "-" + opcao.getNome() + ", R$" + String.format("%.2f", opcao.getValor()) + "\n");
+            System.out.print(opcao.ordinal()+1 + "-" + opcao.getNome() + ", R$" + String.format("%.2f", opcao.getValor()) + ", " + opcao.getEstoque() + " unidades \n");
         }
         System.out.println();
     }
@@ -87,7 +91,7 @@ public enum Refrigerante{
     public static void quantidadeRefrigerantes() {
         Refrigerante[] opcoes = Refrigerante.values();
         for (Refrigerante opcao : opcoes) {
-            System.out.print(opcao.ordinal()+1 + "-" + opcao.getNome() + ", " + opcao.getEstoque() + " unidades \n");
+            System.out.println(opcao.ordinal()+1 + "-" + opcao.getNome() + ", " + opcao.getEstoque() + " unidades");
         }
         System.out.println();
     }

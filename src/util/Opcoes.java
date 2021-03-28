@@ -5,11 +5,13 @@ public enum Opcoes {
     EXIBIRCREDITO ("Exibir crédito"),
     CANCELARVENDA ("Cancelar venda"),
     ESCOLHERREFRIGERANTE("Escolher refrigerante"),
-    RECEBERTROCO("Receber troco"),
+    // RECEBERTROCO("Receber troco"),
     ACESSOADMINISTRADOR("Acessar privilégios de administrador"),
     ENCERRARPEDIDO("Encerrar pedido");
 
     private final String opcao;
+    public static final int MAXOPCOES = 6;
+    public static final int MINOPCOES =1;
 
     /*
         CONSTRUTOR

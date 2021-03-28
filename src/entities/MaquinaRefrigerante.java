@@ -60,12 +60,12 @@ public class MaquinaRefrigerante {
     /*
         MÉTODOS PEDIDOS
     */
-    public void receberCredito(int valor){
+    public void receberCredito(double valor){
         creditoAtual += valor;
     }
 
-    public double exibirCreditoAtual(){
-        return getCreditoAtual();
+    public void exibirCreditoAtual(){
+        System.out.println("O crédito atuel é: R$"+ String.format("%.2f",getCreditoAtual()));
     }
 
     public void cancelarVenda(){
@@ -79,8 +79,9 @@ public class MaquinaRefrigerante {
         this.refrigeranteEscolhido = refrigeranteEscolhido;
     }
 
-    public void alterarEstoque(int quantidadeRetirar){
+    public void alterarEstoque(String refrigeranteEscolhido, int quantidadeRetirar){
         this.quantidadeRetirar = quantidadeRetirar;
+        this.refrigeranteEscolhido = refrigeranteEscolhido;
         refrigerante.retirarRefrigerante(getRefrigeranteEscolhido(), getQuantidadeRetirar());
     }
     
@@ -89,5 +90,17 @@ public class MaquinaRefrigerante {
     */
     public void exibirQuantiadePorRefrigerante(){
         Refrigerante.quantidadeRefrigerantes();
+    }
+
+    public void atualizarCreditoAtualPosCompra(double valorRefrigerante) {
+        this.creditoAtual -= valorRefrigerante;
+    }
+
+    public void somarCreditoAtualAoSaldo(double valor){
+        this.saldo += valor;
+    }
+
+    public void subtrairValorCompraNoSaldo(double valor){
+        this.saldo -= valor;
     }
 }
